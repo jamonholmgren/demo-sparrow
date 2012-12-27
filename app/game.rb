@@ -114,9 +114,5 @@ class Game < SPSprite
     # event listeners must be removed in the dealloc phase
     self.removeEventListenersAtObject(self, forType:SP_EVENT_TYPE_ENTER_FRAME)
     @basket.removeEventListenersAtObject(self, forType:SP_EVENT_TYPE_TOUCH)
-    @background.release
-    @basket.release
-    @eggs.release
-    super
   end
 end

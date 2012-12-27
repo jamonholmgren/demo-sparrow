@@ -18,13 +18,7 @@ class RootViewController < UIViewController
   	scale = 1
   	self.initWithViewBounds(view_bounds, stageSize:st_size, supportHighResolutions:hd, contentScaleFactor:scale, multipleTouchEnabled:multitouch, frameRate:rate)
   end
-  
-  def dealloc
-    @window.release
-    @sparrowView.release
-    super
-  end
-  
+    
   def setupStageWithCompletionHandler(&handler)
     # init root view
     @window = UIWindow.alloc.initWithFrame(@view_bounds)
