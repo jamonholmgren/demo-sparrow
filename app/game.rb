@@ -86,10 +86,11 @@ class Game < SPSprite
           tween.animateProperty('y', targetValue:yolk.y + yolk.height)
           tween.animateProperty('height', targetValue:2*yolk.height)
           tween.animateProperty('alpha', targetValue:0)
+    			self.stage.juggler.addObject(tween)
         end
-        
         self.removeChild(egg)
         @eggs.removeObject(egg)
+        
       elsif did_get_caught
         # just remove the egg
         self.removeChild(egg)
@@ -97,6 +98,8 @@ class Game < SPSprite
       end
     end
     # create and add new eggs if necessary
+    # positions them right above the visible screen
+    # but randomly distributed on the x-axis
     @total_time += passed_time
     if @total_time - @creation_time_of_last_egg >= @egg_creation_interval
       @eggs << SPImage.imageWithContentsOfFile('egg.png').tap do |egg|
