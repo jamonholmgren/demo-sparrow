@@ -1,0 +1,17 @@
+.repl_history
+build
+tags
+resources/*.nib
+resources/*.momd
+resources/*.storyboardc
+vendor/Pods
+.DS_Store
+nbproject
+.redcar
+#*#
+*~
+*.sw[po]
+.eprj
+.DS_Store
+.rvmrc
+.dat*.0??
