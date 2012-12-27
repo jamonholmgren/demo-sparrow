@@ -1,0 +1,11 @@
+
+PODS:
+- Sparrow-Framework (1.4)
+
+DEPENDENCIES:
+- Sparrow-Framework
+
+SPEC CHECKSUMS:
+  Sparrow-Framework: 4db9face42f2c1f62d27b156bfdefa126d149b53
+
+COCOAPODS: 0.16.0
