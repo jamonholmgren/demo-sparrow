@@ -16,12 +16,18 @@ class Game < SPSprite
   SP_EVENT_TYPE_TOUCH = "touch"
   SP_EVENT_TYPE_ENTER_FRAME = "enterFrame"
   attr_accessor :background, :basket, :eggs
-  
+
+  def ipad?
+    UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad
+  end
+
   def init
     super.tap do
       # load the background image first, add it to the display tree
       # and keep it for later use
-      @background = SPImage.alloc.initWithContentsOfFile('background.png').tap { |bg| self.addChild(bg) }
+      bg_filename = "background.png"
+      bg_filename = "background_ipad.png" if ipad?
+      @background = SPImage.alloc.initWithContentsOfFile(bg_filename).tap { |bg| self.addChild(bg) }
       
   		# loads the basket, positions in the middle of the ground,
   		# adds a touch listener and adds it as a child
